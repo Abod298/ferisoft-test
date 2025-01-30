@@ -1,6 +1,6 @@
 # Basit Blog Projesi - Ferisoft İşe Alım Test Çözümü
 
-Bu, Ferisoft için bir işe alım testi çözümü olarak sunulmuş basit ve küçük bir blog projesidir. Uygulama, Abdulkader Al-Abdullah tarafından geliştirilmiştir.
+Bu, Ferisoft için bir işe alım testi çözümü olarak sunulmuş basit ve küçük bir blog projesidir. Uygulama, Abdulkadir ALABDULLAH tarafından geliştirilmiştir.
 
 ## Kullanılan Teknolojiler
 - Dil: PHP
@@ -41,7 +41,7 @@ Uygulamayı indirdikten sonra, geçiş dosyalarını ve seeders'ı çalıştırm
 
 # Simple Blog Project - Test Solution for Ferisoft
 
-This is a simple and small blog project presented as a solution for a job test by Ferisoft. The application is developed by Abdulkader Al-Abdullah.
+This is a simple and small blog project presented as a solution for a job test by Ferisoft. The application is developed by Abdulkadir ALABDULLAH .
 
 ## Technologies Used
 - Language: PHP
