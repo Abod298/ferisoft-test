@@ -6,13 +6,21 @@ use App\Http\Requests\PostStoreRequest;
 use App\Http\Requests\PostUpdateRequest;
 use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(){
-        $posts = Post::latest()->paginate(8);
-        return view('admin.posts.index' ,compact('posts'));
+    use AuthorizesRequests;
+    public function index(Request $request){
+        $categoryId = $request->input('category');
+        $posts = Post::when($categoryId, function($query) use ($categoryId) {
+            return $query->where('category_id', $categoryId);
+        })
+        ->orderBy('created_at', 'desc') // Ordering by the latest posts first
+        ->paginate(8);
+        $categories = Category::all();
+        return view('admin.posts.index' ,compact('posts' , 'categories'));
 
     }
     public function show(Post $post){
@@ -35,11 +43,13 @@ class PostController extends Controller
         return redirect()->route('admin.posts.index');
     }
     public function edit(Post $post){
+        $this->authorize('update', $post);
         $categories = Category::pluck('name', 'id');
         $post->load('category');
         return view('admin.posts.edit', compact('post' , 'categories'));
     }
     public function destroy(Post $post){
+        $this->authorize('delete', $post);
         $post->delete();
         return back();
     }

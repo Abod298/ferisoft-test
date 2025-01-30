@@ -11,12 +11,19 @@
             </a>
         </div>
 
-
+        <div class="w-full max-w-xs mx-auto my-4">
+            <label for="category" class="block text-sm font-medium text-gray-700">Choose a Category</label>
+            <select id="category" name="category" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">Select Category</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             @foreach ($posts as $key => $post)
                 <div
                     class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                    <!-- Image Section (Optional) -->
                     @if ($post->image)
                         <div class="relative h-48 overflow-hidden">
                             <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}"
@@ -40,10 +47,13 @@
                                 class="text-blue-600 hover:text-blue-700 transition-colors duration-300 font-semibold">
                                 Show
                             </a>
+                            @can('update', $post)
                             <a href="{{ route('admin.posts.edit', $post->id) }}"
                                 class="text-green-600 hover:text-green-800 transition-colors duration-300 font-semibold">
                                 Edit
                             </a>
+                            @endcan
+                            @can('delete', $post)
                             <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST" class="inline"
                                 onsubmit="return confirm('Are you sure you want to delete this post?')">
                                 @csrf
@@ -53,6 +63,7 @@
                                     Delete
                                 </button>
                             </form>
+                            @endcan
                         </div>
                         <div class="mt-2 flex justify-between items-center text-sm text-gray-500">
                             <span>{{ $post->created_at->diffForHumans() }}</span>
@@ -68,4 +79,20 @@
             {{ $posts->links() }}
         </div>
     </div>
+@endsection
+@section('script')
+<script>
+    document.getElementById('category').addEventListener('change', function() {
+        const categoryId = this.value;
+        const url = new URL(window.location.href);
+
+        if (categoryId) {
+            url.searchParams.set('category', categoryId);
+        } else {
+            url.searchParams.delete('category');
+        }
+
+        window.location.href = url.toString();
+    });
+</script>
 @endsection

@@ -21,6 +21,7 @@ class AdminUserSeeder extends Seeder
             'password' => Hash::make('password'),
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
+            'admin' => true,
         ]);
     }
 }

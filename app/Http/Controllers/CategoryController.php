@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CategoryStoreRequest;
 use App\Http\Requests\CategoryUpdateRequest;
 use App\Models\Category;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    use AuthorizesRequests;
     public function index(){
         $categories = Category::latest()->paginate(10);
         return view('admin.categories.index' ,compact('categories'));
@@ -29,9 +31,11 @@ class CategoryController extends Controller
         return redirect()->route('admin.categories.index');
     }
     public function edit(Category $category){
+        $this->authorize('update' , $category);
         return view('admin.categories.edit', compact('category'));
     }
     public function destroy(Category $category){
+        $this->authorize('update' , $category);
         $category->delete();
         return back();
     }

@@ -25,6 +25,7 @@
         <p class="text-gray-600">&copy; {{ date('Y') }} Abdulkadir Alabdullah - Ferisoft Test</p>
     </footer>
 
+        @yield('script')
 </body>
 
 </html>

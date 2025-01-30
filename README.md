@@ -37,6 +37,17 @@ Uygulamayı indirdikten sonra, geçiş dosyalarını ve seeders'ı çalıştırm
 - Kullanıcılar için bir kayıt olma özelliği de mevcuttur.
 - Bu uygulama 2 saatlik bir çalışma süresi içinde geliştirilmiştir.
 
+## Güncellemeler ve Özellikler
+
+Uygulamayı güncelleyerek, normal kullanıcıların kategorileri silmesini veya düzenlemesini engelleyen bir politika ekledim. Ayrıca, normal kullanıcıların diğer kullanıcıların oluşturduğu gönderileri silmesini veya düzenlemesini engelledim. Ancak, "admin" rolündeki kullanıcılara bu işlemleri gerçekleştirebilme yetkisi verildi.
+
+Ayrıca, gönderilerin görünümünü güzelleştirmek amacıyla varsayılan bir resim şekli ekledim. Sistemde, varsayılan resim kullanıldıktan sonra gönderiler için resim yüklenmesine olanak tanınmaktadır.
+
+Bu tür sistemleri daha önce geliştirdiğimi belirtmek isterim ve bir yönetsel web sitemin bağlantısını paylaşacağım:
+[codil.org](http://codil.org)
+
+Teşekkürler.
+
 ---------------------------------------------------
 
 # Simple Blog Project - Test Solution for Ferisoft
@@ -77,6 +88,17 @@ After downloading the application, it's recommended to run the migration files a
 - You can customize user permissions using gates or policies if needed.
 - A registration feature is also available for users.
 - This application was developed within 2 hours of work.
+
+## Updates & Features
+
+I have updated the application by adding a policy that prevents regular users from deleting or modifying categories. It also restricts regular users from deleting or modifying posts created by other users. However, users in the "admin" role are granted full permissions to perform these actions.
+
+Additionally, I have added a default image style for posts to enhance their appearance. The system is also designed to allow users to upload images for posts once the default image is used.
+
+I would like to mention that I have previously developed similar systems, and I will share the link to one of my administrative websites:
+[codil.org](http://codil.org)
+
+Thank you.
 
 ---
 
