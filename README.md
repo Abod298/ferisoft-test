@@ -1,10 +1,11 @@
-# Basit Blog Projesi - Verisoft İşe Alım Test Çözümü
+# Basit Blog Projesi - Ferisoft İşe Alım Test Çözümü
 
-Bu, Verisoft için bir işe alım testi çözümü olarak sunulmuş basit ve küçük bir blog projesidir. Uygulama, Abdulkader Al-Abdullah tarafından geliştirilmiştir.
+Bu, Ferisoft için bir işe alım testi çözümü olarak sunulmuş basit ve küçük bir blog projesidir. Uygulama, Abdulkader Al-Abdullah tarafından geliştirilmiştir.
 
 ## Kullanılan Teknolojiler
 - Dil: PHP
-- Framework: Tailwind CSS
+- Framework: Laravel
+- Style : TailwindCss
 - Başlangıç Kit: Breeze
 
 ## Açıklama
@@ -38,13 +39,14 @@ Uygulamayı indirdikten sonra, geçiş dosyalarını ve seeders'ı çalıştırm
 
 ---------------------------------------------------
 
-# Simple Blog Project - Test Solution for Verisoft
+# Simple Blog Project - Test Solution for Ferisoft
 
-This is a simple and small blog project presented as a solution for a job test by Verisoft. The application is developed by Abdulkader Al-Abdullah.
+This is a simple and small blog project presented as a solution for a job test by Ferisoft. The application is developed by Abdulkader Al-Abdullah.
 
 ## Technologies Used
 - Language: PHP
-- Framework: Tailwind CSS
+- Framework: Laravel
+- Style : TailwindCss
 - Starter Kit: Breeze
 
 ## Description
